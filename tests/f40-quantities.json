@@ -1,0 +1,853 @@
+{
+ "schema": "f40-unitsml-feature-vectors/1",
+ "producer": "unitsml-ruby",
+ "cases": [
+  {
+   "id": "conv-mile-to-m",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "mi",
+    "target": "m"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "201168/125",
+     "decimal": "1609.344"
+    },
+    "unit": "m",
+    "dimension_id": "NISTd1",
+    "dimension_vector": {
+     "Length": 1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-km-to-m",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "km",
+    "target": "m"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1000/1",
+     "decimal": "1000"
+    },
+    "unit": "m",
+    "dimension_id": "NISTd1",
+    "dimension_vector": {
+     "Length": 1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-bar-to-pa",
+   "kind": "convert",
+   "input": {
+    "value": "2",
+    "unit": "bar",
+    "target": "Pa"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "200000/1",
+     "decimal": "200000"
+    },
+    "unit": "Pa",
+    "dimension_id": "NISTd14",
+    "dimension_vector": {
+     "Length": -1,
+     "Mass": 1,
+     "Time": -2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-kwh-to-j",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "kW*h",
+    "target": "J"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "3600000/1",
+     "decimal": "3600000"
+    },
+    "unit": "J",
+    "dimension_id": "NISTd15",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-mph-to-mps",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "mi/h",
+    "target": "m/s"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1397/3125",
+     "decimal": "0.44704"
+    },
+    "unit": "m/s",
+    "dimension_id": "NISTd11",
+    "dimension_vector": {
+     "Length": 1,
+     "Time": -1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-km2-to-m2",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "km^2",
+    "target": "m^2"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1000000/1",
+     "decimal": "1000000"
+    },
+    "unit": "m^2",
+    "dimension_id": "NISTd8",
+    "dimension_vector": {
+     "Length": 2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-in2-to-m2",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "in^2",
+    "target": "m^2"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "16129/25000000",
+     "decimal": "0.00064516"
+    },
+    "unit": "m^2",
+    "dimension_id": "NISTd8",
+    "dimension_vector": {
+     "Length": 2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-cm3-to-m3",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "cm^3",
+    "target": "m^3"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1000000",
+     "decimal": "0.000001"
+    },
+    "unit": "m^3",
+    "dimension_id": "NISTd10",
+    "dimension_vector": {
+     "Length": 3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-degc-to-k",
+   "kind": "convert",
+   "input": {
+    "value": "100",
+    "unit": "degC",
+    "target": "K"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "7463/20",
+     "decimal": "373.15"
+    },
+    "unit": "K",
+    "dimension_id": "NISTd5",
+    "dimension_vector": {
+     "ThermodynamicTemperature": 1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-k-to-degc",
+   "kind": "convert",
+   "input": {
+    "value": "0",
+    "unit": "K",
+    "target": "degC"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "-5463/20",
+     "decimal": "-273.15"
+    },
+    "unit": "degC",
+    "dimension_id": "NISTd5",
+    "dimension_vector": {
+     "ThermodynamicTemperature": 1
+    },
+    "scale": "interval"
+   }
+  },
+  {
+   "id": "conv-kva-to-w",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "kV*A",
+    "target": "W"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1000/1",
+     "decimal": "1000"
+    },
+    "unit": "W",
+    "dimension_id": "NISTd16",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-kva-to-kw",
+   "kind": "convert",
+   "input": {
+    "value": "1",
+    "unit": "kV*A",
+    "target": "kW"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "kW",
+    "dimension_id": "NISTd16",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "conv-w-to-kva",
+   "kind": "convert",
+   "input": {
+    "value": "1500",
+    "unit": "W",
+    "target": "kV*A"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "3/2",
+     "decimal": "1.5"
+    },
+    "unit": "kV*A",
+    "dimension_id": "NISTd16",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-V",
+   "kind": "dimension",
+   "input": {
+    "unit": "V"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "V",
+    "dimension_id": "NISTd18",
+    "dimension_vector": {
+     "ElectricCurrent": -1,
+     "Length": 2,
+     "Mass": 1,
+     "Time": -3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-A",
+   "kind": "dimension",
+   "input": {
+    "unit": "A"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "A",
+    "dimension_id": "NISTd4",
+    "dimension_vector": {
+     "ElectricCurrent": 1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-W",
+   "kind": "dimension",
+   "input": {
+    "unit": "W"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "W",
+    "dimension_id": "NISTd16",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-kVxA",
+   "kind": "dimension",
+   "input": {
+    "unit": "kV*A"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "kV*A",
+    "dimension_id": "NISTd16",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -3
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-mps",
+   "kind": "dimension",
+   "input": {
+    "unit": "m/s"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "m/s",
+    "dimension_id": "NISTd11",
+    "dimension_vector": {
+     "Length": 1,
+     "Time": -1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-N",
+   "kind": "dimension",
+   "input": {
+    "unit": "N"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "N",
+    "dimension_id": "NISTd12",
+    "dimension_vector": {
+     "Length": 1,
+     "Mass": 1,
+     "Time": -2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-degC",
+   "kind": "dimension",
+   "input": {
+    "unit": "degC"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "degC",
+    "dimension_id": "NISTd5",
+    "dimension_vector": {
+     "ThermodynamicTemperature": 1
+    },
+    "scale": "interval"
+   }
+  },
+  {
+   "id": "dim-K",
+   "kind": "dimension",
+   "input": {
+    "unit": "K"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "K",
+    "dimension_id": "NISTd5",
+    "dimension_vector": {
+     "ThermodynamicTemperature": 1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-Pa",
+   "kind": "dimension",
+   "input": {
+    "unit": "Pa"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "Pa",
+    "dimension_id": "NISTd14",
+    "dimension_vector": {
+     "Length": -1,
+     "Mass": 1,
+     "Time": -2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-J",
+   "kind": "dimension",
+   "input": {
+    "unit": "J"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "J",
+    "dimension_id": "NISTd15",
+    "dimension_vector": {
+     "Length": 2,
+     "Mass": 1,
+     "Time": -2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-me2",
+   "kind": "dimension",
+   "input": {
+    "unit": "m^2"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "1/1",
+     "decimal": "1"
+    },
+    "unit": "m^2",
+    "dimension_id": "NISTd8",
+    "dimension_vector": {
+     "Length": 2
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "dim-1",
+   "kind": "dimension",
+   "input": {
+    "unit": "1"
+   },
+   "outcome": "error",
+   "error_class": "NoMethodError",
+   "error_ancestors": [
+    "NoMethodError",
+    "DidYouMean::Correctable",
+    "ErrorHighlight::CoreExt",
+    "NameError"
+   ],
+   "error_message": "undefined method '[]' for nil"
+  },
+  {
+   "id": "kva-product",
+   "kind": "product",
+   "input": {
+    "left": [
+     "10",
+     "kV"
+    ],
+    "right": [
+     "5",
+     "A"
+    ]
+   },
+   "outcome": "ok",
+   "result": {
+    "product": {
+     "value": {
+      "rational": "50/1",
+      "decimal": "50"
+     },
+     "unit": "kV*A",
+     "dimension_id": "NISTd16",
+     "dimension_vector": {
+      "Length": 2,
+      "Mass": 1,
+      "Time": -3
+     },
+     "scale": "ratio"
+    },
+    "equals_50000_W": false,
+    "equals_50_kW": true,
+    "to_W": {
+     "value": {
+      "rational": "50000/1",
+      "decimal": "50000"
+     },
+     "unit": "W",
+     "dimension_id": "NISTd16",
+     "dimension_vector": {
+      "Length": 2,
+      "Mass": 1,
+      "Time": -3
+     },
+     "scale": "ratio"
+    },
+    "to_kW": {
+     "value": {
+      "rational": "50/1",
+      "decimal": "50"
+     },
+     "unit": "kW",
+     "dimension_id": "NISTd16",
+     "dimension_vector": {
+      "Length": 2,
+      "Mass": 1,
+      "Time": -3
+     },
+     "scale": "ratio"
+    }
+   }
+  },
+  {
+   "id": "difference-degc",
+   "kind": "difference",
+   "input": {
+    "high": [
+     "20",
+     "degC"
+    ],
+    "low": [
+     "15",
+     "degC"
+    ],
+    "target": "K"
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "5/1",
+     "decimal": "5"
+    },
+    "unit": "K",
+    "dimension_id": "NISTd5",
+    "dimension_vector": {
+     "ThermodynamicTemperature": 1
+    },
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "pure-number",
+   "kind": "dimension",
+   "input": {
+    "value": "3",
+    "unit": null
+   },
+   "outcome": "ok",
+   "result": {
+    "value": {
+     "rational": "3/1",
+     "decimal": "3"
+    },
+    "unit": "3",
+    "dimension_id": null,
+    "dimension_vector": {},
+    "scale": "ratio"
+   }
+  },
+  {
+   "id": "kva-equals-50-W-upstream-spec",
+   "kind": "equality",
+   "input": {
+    "left": "10 kV * 5 A",
+    "right": "50 W"
+   },
+   "outcome": "ok",
+   "result": {
+    "equal": true
+   }
+  },
+  {
+   "id": "refuse-degc2-to-k2",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-degc2-to-k2"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::ConversionError",
+   "error_ancestors": [
+    "Unitsml::Errors::ConversionError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "affine unit raised to power 2/1"
+  },
+  {
+   "id": "refuse-m-to-s",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-m-to-s"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::DimensionMismatchError",
+   "error_ancestors": [
+    "Unitsml::Errors::DimensionMismatchError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "dimension mismatch: {\"Length\" => 1} vs {\"Time\" => 1}"
+  },
+  {
+   "id": "refuse-degc-to-k2",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-degc-to-k2"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::DimensionMismatchError",
+   "error_ancestors": [
+    "Unitsml::Errors::DimensionMismatchError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "dimension mismatch: {\"ThermodynamicTemperature\" => 1} vs {\"ThermodynamicTemperature\" => 2}"
+  },
+  {
+   "id": "refuse-v-plus-s",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-v-plus-s"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::DimensionMismatchError",
+   "error_ancestors": [
+    "Unitsml::Errors::DimensionMismatchError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "dimension mismatch: {\"Length\" => 2, \"Mass\" => 1, \"Time\" => -3, \"ElectricCurrent\" => -1} vs {\"Time\" => 1}"
+  },
+  {
+   "id": "refuse-degc-times-2",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-degc-times-2"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::ScaleOperationError",
+   "error_ancestors": [
+    "Unitsml::Errors::ScaleOperationError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "scaling is not legal on a interval scale quantity"
+  },
+  {
+   "id": "refuse-degc-times-degc",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-degc-times-degc"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::ScaleOperationError",
+   "error_ancestors": [
+    "Unitsml::Errors::ScaleOperationError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "multiplication is not legal between interval and interval scale quantities"
+  },
+  {
+   "id": "refuse-div-zero-quantity",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-div-zero-quantity"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::IndeterminateResultError",
+   "error_ancestors": [
+    "Unitsml::Errors::IndeterminateResultError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "division by a zero quantity is indeterminate"
+  },
+  {
+   "id": "refuse-div-zero-scalar",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-div-zero-scalar"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::IndeterminateResultError",
+   "error_ancestors": [
+    "Unitsml::Errors::IndeterminateResultError",
+    "Unitsml::Errors::QuantityOperationError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "division by a zero quantity is indeterminate"
+  },
+  {
+   "id": "refuse-unknown-unit",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-unknown-unit"
+   },
+   "outcome": "error",
+   "error_class": "Unitsml::Errors::ParseError",
+   "error_ancestors": [
+    "Unitsml::Errors::ParseError",
+    "Unitsml::Errors::BaseError"
+   ],
+   "error_message": "[unitsml] Error: cannot parse \"notaunit_xyz\" as a UnitsML expression."
+  },
+  {
+   "id": "refuse-both-keywords",
+   "kind": "refusal",
+   "input": {
+    "source": "refuse-both-keywords"
+   },
+   "outcome": "error",
+   "error_class": "ArgumentError",
+   "error_ancestors": [
+    "ErrorHighlight::CoreExt",
+    "ArgumentError"
+   ],
+   "error_message": "give only one of unit: or unit_expression:"
+  }
+ ],
+ "producer_source": {
+  "repository": "unitsml/unitsml-ruby",
+  "commit": "92b0f3481cd90e8a7b50ba9bd729363bec150a21",
+  "tree": "16b4620b43a538f5d9cbc0fddd030dfb181f95fb",
+  "ref": "origin/main",
+  "version": "0.6.14",
+  "unitsdb_gem": "2.2.13",
+  "unitsdb_data_seal": {
+   "sha256": "11daf72a52488bbdb7b48a1037dd1b00678c436f3f075f33939824b4e023fbe2",
+   "files": 14,
+   "method": "sha256 over sorted relpath NUL sha256 LF"
+  },
+  "gemfile_lock_sha256": "2d777d00103f74c948a45cde5e5068ea299a566c2fadae4eccc94f66b004cec7",
+  "ruby": "ruby 3.4.8 (2025-12-17 revision 995b59f666) +PRISM [x64-mingw-ucrt]"
+ },
+ "counts": {
+  "cases": 39,
+  "kinds": {
+   "convert": 13,
+   "dimension": 13,
+   "product": 1,
+   "difference": 1,
+   "equality": 1,
+   "refusal": 10
+  },
+  "ok": 28
+ },
+ "source_semantics_findings": [
+  "Quantity#== compares raw value and dimension vector only: 10 kV * 5 A == 50 W is true (upstream quantity_spec asserts it) and 50 kV*A == 50000 W is false",
+  "Quantity.new(value: 3, unit: nil) reports dimension_id nil although the source comment says \"1\" for pure numbers",
+  "Quantity.new(value: 1, unit_expression: \"1\") raises untyped NoMethodError"
+ ]
+}
