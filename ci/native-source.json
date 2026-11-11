@@ -13,7 +13,8 @@
       "unitsdb_rs": {
         "repository": "unitsml/unitsdb-rs",
         "revision": "c631488e03f58c5cfd0ada369948b946a23a4f42",
-        "public": false
+        "public": false,
+        "checkout_as": "unitsdb-rs"
       },
       "asciiunits_python": {
         "repository": "unitsml/asciiunits-python",
@@ -25,7 +26,9 @@
         "revision": "877530fd9a04ed8c9026dafc2ee5127215e2bd00",
         "public": true
       }
-    }
+    },
+    "library_stem": "unitsml_rs",
+    "binary_policy": "CI builds the pinned clean source with scripts/build-native-receipt.py; build-wheel.py --build-receipt validates commit, Cargo.lock, platform, metadata and the actual library hash. Without a receipt the fixed library_sha256 pin is enforced."
   },
   "data": null,
   "tests": [
