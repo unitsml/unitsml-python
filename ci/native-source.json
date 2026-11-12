@@ -7,14 +7,14 @@
     "kind": "prebuilt-library",
     "repository": "unitsml/unitsml-rs",
     "local": "workspace/units-native/unitsml-rs",
-    "revision": "fd3b3cbdd3bb91f732e5c8f2d76ff86a8168ec49",
+    "revision": "14c17076b7199940acaf9ce1f0272f3808b389bd",
     "public": true,
     "deps": {
       "unitsdb_rs": {
         "repository": "unitsml/unitsdb-rs",
-        "revision": "c631488e03f58c5cfd0ada369948b946a23a4f42",
+        "revision": "969a131b8992930a6ff6f869291f1f0d7cb68d33",
         "public": true,
-        "checkout_as": "unitsdb-rs"
+        "note": "Cargo git dependency of unitsml-rs, locked in its Cargo.lock; bundles the UnitsDB b210137 projection (merged in unitsml/unitsdb as b0b4315)"
       },
       "asciiunits_python": {
         "repository": "unitsml/asciiunits-python",
@@ -34,7 +34,8 @@
   },
   "data": null,
   "tests": [
-    "tests/test_installed.py"
+    "tests/test_installed.py",
+    "tests/test_register_scope.py"
   ],
   "python_runtime": {
     "repository": "parsanol/parsanol-python",

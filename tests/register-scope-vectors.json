@@ -1,0 +1,64 @@
+{
+  "profile": "unitsml-register-scope/v1",
+  "reference": {
+    "repository": "unitsml/unitsml-ruby",
+    "commit": "2ec9583a1902a2c13fd508f3bec558a2adde5de7",
+    "api": "Unitsml::Conversion.with_register(register) { Unitsml::Quantity.new(value:, unit:).convert_to(target) }",
+    "unitsdb": {
+      "repository": "unitsml/unitsdb",
+      "commit": "b0b4315fc5b53f6caa0a1edb94707b4f13223b38",
+      "tree": "c57eb0ae330b051e6ea7909aeabe0a89b77707ed",
+      "units_yaml_sha256": "aac53ed54cb38632d6bdc942022261bf8a369d8e3630d39ecce2567aadb745bd"
+    }
+  },
+  "native": {
+    "repository": "unitsml/unitsml-rs",
+    "commit": "14c17076b7199940acaf9ce1f0272f3808b389bd",
+    "change": "87c97eb2971df85fb568ec354ac15c809594ab97"
+  },
+  "cases": [
+    {
+      "id": "register-direct-lb",
+      "register": [
+        {
+          "unit": "NISTu201",
+          "dimensions": {
+            "Mass": "1"
+          },
+          "factor": "0.45359237"
+        }
+      ],
+      "value": "2",
+      "unit": "NISTu201",
+      "ruby_unit": "lb",
+      "target": "kg",
+      "ruby": {
+        "outcome": "ok",
+        "converted_value": "45359237/50000000",
+        "converted_unit": "kg"
+      }
+    },
+    {
+      "id": "register-chained-cwt-us-refused",
+      "register": [
+        {
+          "unit": "NISTu201",
+          "dimensions": {
+            "Mass": "1"
+          },
+          "factor": "0.45359237"
+        }
+      ],
+      "value": "2",
+      "unit": "NISTu230",
+      "ruby_unit": "cwt (US)",
+      "target": "kg",
+      "ruby": {
+        "outcome": "error",
+        "error_class": "Unitsml::Errors::ConversionError",
+        "message": "no canonical conversion path for \"lb\""
+      },
+      "native_code": "missing_conversion"
+    }
+  ]
+}
