@@ -8,18 +8,20 @@
     "repository": "unitsml/unitsml-rs",
     "local": "workspace/units-native/unitsml-rs",
     "revision": "fd3b3cbdd3bb91f732e5c8f2d76ff86a8168ec49",
-    "public": false,
+    "public": true,
     "deps": {
       "unitsdb_rs": {
         "repository": "unitsml/unitsdb-rs",
         "revision": "c631488e03f58c5cfd0ada369948b946a23a4f42",
-        "public": false,
+        "public": true,
         "checkout_as": "unitsdb-rs"
       },
       "asciiunits_python": {
         "repository": "unitsml/asciiunits-python",
-        "revision": "5c185e271220604648da2a036b4dc94c729fa952",
-        "public": false
+        "revision": "2e85f6c9320199cbcba1e91556b6722723ef5d8d",
+        "public": true,
+        "build_wheel": true,
+        "note": "merged unitsml/asciiunits-python main; carries the qualified 5c185e27 sources plus delivery CI"
       },
       "f40_corpus": {
         "repository": "unitsml/unitsml-testsuite",

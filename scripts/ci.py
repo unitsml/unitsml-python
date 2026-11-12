@@ -75,6 +75,22 @@ def sibling_checkouts():
             checkout(dep, dep["checkout_as"])
 
 
+def build_sibling_wheels():
+    """Runtime Python dependencies that are themselves native packages (unitsml needs asciiunits)
+    are built here from their public pinned repository with that repository's own scripts/ci.py,
+    and shipped to the installed-wheel jobs as staged wheels (the install uses --no-index)."""
+    for name, dep in (NATIVE.get("deps") or {}).items():
+        if not dep.get("build_wheel"):
+            continue
+        source = checkout(dep, name)
+        run([sys.executable, source / "scripts/ci.py", "build-native"], f"{name}-build-native", cwd=source)
+        run([sys.executable, source / "scripts/ci.py", "install-wheel"], f"{name}-install-wheel", cwd=source)
+        extra = STAGING / "extra"
+        extra.mkdir(parents=True, exist_ok=True)
+        for wheel in sorted((source / "dist").glob("*.whl")):
+            shutil.copy2(wheel, extra / wheel.name)
+
+
 def build_native():
     STAGING.mkdir(exist_ok=True)
     kind = NATIVE["kind"]
@@ -95,6 +111,7 @@ def build_native():
         pass  # the package's own wheel builder runs cargo itself
     else:
         raise SystemExit(f"unknown native kind {kind}")
+    build_sibling_wheels()
     (STAGING / "receipt.json").write_text(json.dumps({
         "rust_revision": NATIVE["revision"], "files": {p.name: digest(p) for p in STAGING.rglob("*") if p.is_file()}},
         indent=2) + "\n")
@@ -153,6 +170,7 @@ def install_wheel():
     venv.EnvBuilder(with_pip=True, clear=True).create(environment())
     python = environment() / ("Scripts/python.exe" if sys.platform == "win32" else "bin/python")
     extra = json.loads(os.environ.get("CI_EXTRA_WHEELS", "[]"))  # e.g. unitsml needs the asciiunits wheel
+    extra += [str(w) for w in sorted((STAGING / "extra").glob("*.whl"))]
     run([python, "-m", "pip", "install", "--no-index", *extra, wheels[0]], "install")
     (EVIDENCE / "wheel.json").write_text(json.dumps({"wheel": wheels[0].name, "sha256": digest(wheels[0])}, indent=2) + "\n")
 
