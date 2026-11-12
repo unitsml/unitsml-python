@@ -1,0 +1,573 @@
+{
+  "profile": "unitsml-point-difference/v1",
+  "reference": {
+    "repository": "unitsml/unitsml-ruby",
+    "commit": "2ec9583a1902a2c13fd508f3bec558a2adde5de7",
+    "unitsdb_gem": "2.2.15",
+    "lutaml_model": "0.8.175",
+    "ruby": "4.0.1",
+    "probe_output_sha256": "d18eb0c0873ebe377361e9751913199010903ec004392ba7d243b1f70f796d12"
+  },
+  "native": {
+    "repository": "unitsml/unitsml-rs",
+    "commit": "cdfbcc3087f271d8723b3c3d1e4764860601e570",
+    "changes": [
+      "85a4485 (unitsml/unitsml-rs#3): a difference minus a point is a difference",
+      "cdfbcc3 (unitsml/unitsml-rs#4): a difference plus a point answers in the difference's unit"
+    ]
+  },
+  "cases": [
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "+",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "35",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "-",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "+",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "35",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "-",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "+",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "35",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "-",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "+",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "35",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "-",
+      "right": {
+        "value": "15",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": false
+      },
+      "op": "+",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5963",
+          "20"
+        ],
+        "unit": "K",
+        "scale": "ratio",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": false
+      },
+      "op": "-",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "-5763",
+          "20"
+        ],
+        "unit": "K",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": false
+      },
+      "op": "+",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "25",
+          "1"
+        ],
+        "unit": "K",
+        "scale": "ratio",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": false
+      },
+      "op": "-",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "-15",
+          "1"
+        ],
+        "unit": "K",
+        "scale": "ratio",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": true
+      },
+      "op": "+",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5963",
+          "20"
+        ],
+        "unit": "K",
+        "scale": "ratio",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": true
+      },
+      "op": "-",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "-5763",
+          "20"
+        ],
+        "unit": "K",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": true
+      },
+      "op": "+",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "25",
+          "1"
+        ],
+        "unit": "K",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "5",
+        "unit": "K",
+        "difference": true
+      },
+      "op": "-",
+      "right": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "-15",
+          "1"
+        ],
+        "unit": "K",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "+",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "35",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "-",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "+",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "6163",
+          "20"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": false
+      },
+      "op": "-",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "-5363",
+          "20"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "+",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "35",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "interval",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "-",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": false
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "5",
+          "1"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "+",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "6163",
+          "20"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    },
+    {
+      "left": {
+        "value": "20",
+        "unit": "degC",
+        "difference": true
+      },
+      "op": "-",
+      "right": {
+        "value": "288.15",
+        "unit": "K",
+        "difference": true
+      },
+      "outcome": "ok",
+      "result": {
+        "value": [
+          "-5363",
+          "20"
+        ],
+        "unit": "degC",
+        "scale": "difference",
+        "kind": null
+      }
+    }
+  ]
+}

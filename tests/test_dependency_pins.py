@@ -13,7 +13,7 @@ class InstalledDependencyPinTests(unittest.TestCase):
 
     def test_unitsml_native_build(self):
         info = json.loads(files("unitsml").joinpath("_native", "build-info.json").read_bytes())
-        self.assertEqual(info["native_source_commit"], "14c17076b7199940acaf9ce1f0272f3808b389bd")
+        self.assertEqual(info["native_source_commit"], "cdfbcc3087f271d8723b3c3d1e4764860601e570")
         notices = json.loads(files("unitsml").joinpath("_native", "licenses", "manifest.json").read_bytes())
         self.assertNotIn("parsanol", [row["name"] for row in notices])
 

@@ -7,7 +7,7 @@
     "kind": "prebuilt-library",
     "repository": "unitsml/unitsml-rs",
     "local": "workspace/units-native/unitsml-rs",
-    "revision": "14c17076b7199940acaf9ce1f0272f3808b389bd",
+    "revision": "cdfbcc3087f271d8723b3c3d1e4764860601e570",
     "public": true,
     "deps": {
       "unitsdb_rs": {
@@ -36,7 +36,8 @@
   "tests": [
     "tests/test_installed.py",
     "tests/test_register_scope.py",
-    "tests/test_dependency_pins.py"
+    "tests/test_dependency_pins.py",
+    "tests/test_point_difference.py"
   ],
   "python_runtime": {
     "repository": "parsanol/parsanol-python",
