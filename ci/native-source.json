@@ -18,10 +18,10 @@
       },
       "asciiunits_python": {
         "repository": "unitsml/asciiunits-python",
-        "revision": "2e85f6c9320199cbcba1e91556b6722723ef5d8d",
+        "revision": "9a405a54041dada2c1392fd0a467eb9b1cbaa2cc",
         "public": true,
         "build_wheel": true,
-        "note": "merged unitsml/asciiunits-python main; carries the qualified 5c185e27 sources plus delivery CI"
+        "note": "merged unitsml/asciiunits-python main (PR #3): asciiunits-rs 1f771ca with parsanol-rs 5206a33 (SDK 5206); replaces 2e85f6c (asciiunits-rs 498cec2, parsanol-rs 20d5e6c)"
       },
       "f40_corpus": {
         "repository": "unitsml/unitsml-testsuite",
@@ -35,7 +35,8 @@
   "data": null,
   "tests": [
     "tests/test_installed.py",
-    "tests/test_register_scope.py"
+    "tests/test_register_scope.py",
+    "tests/test_dependency_pins.py"
   ],
   "python_runtime": {
     "repository": "parsanol/parsanol-python",
