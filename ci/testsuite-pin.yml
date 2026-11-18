@@ -1,0 +1,7 @@
+# The unitsml-testsuite commit whose corpora/renders and corpora/conversions
+# this package replays in CI (scripts/corpus_replay.py). It is the same pin
+# as unitsml-ruby spec/fixtures/testsuite-pin.yml. Move it forward in one
+# deliberate commit, together with ci/testsuite-replay.json.
+---
+repository: https://github.com/unitsml/unitsml-testsuite
+commit: 087e4ee60eb402d6436ae919f50a187faec2abb7

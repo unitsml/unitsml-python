@@ -1,0 +1,27 @@
+{
+  "schema": "unitsml-python/replay/1",
+  "commit": "087e4ee60eb402d6436ae919f50a187faec2abb7",
+  "files": {
+    "corpora/renders/expected-renders.json": {
+      "sha256": "4b796658b8d17e2656908e6aeba782d772e79b91d5a0e3fe8f1bd38bd818e356",
+      "git_blob": "77256a42e71181b7d91edb80b5f851e06ad93cf2",
+      "rows": 89,
+      "executed": 0,
+      "unsupported": {"render": 87, "ruby_error": 2}
+    },
+    "corpora/conversions/expected-conversions.json": {
+      "sha256": "e1c326b9af7e07514d5095f5c9ecfb65120b861089d441437659778459822768",
+      "git_blob": "3204391e8af4b6c6b27b1cdf51f95408ec8baf8a",
+      "rows": 25,
+      "executed": 9,
+      "executed_ids_sha256": "2cb9242d03d29788b2b00a0acd3c05e6a59a6e9a7f31c39ad62341e04823792a",
+      "unsupported": {
+        "convert-with-caller-definition": 3,
+        "difference-with-caller-definition": 1,
+        "definition": 4,
+        "resolve": 3,
+        "error": 5
+      }
+    }
+  }
+}
