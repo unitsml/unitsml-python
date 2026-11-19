@@ -28,8 +28,10 @@ def validated_receipt(path, pins, binary, metadata_path, platform_tag):
         raise RuntimeError("Build receipt source commit differs from the pinned native source")
     if receipt["cargo_lock_sha256"] != pins["cargo_lock_sha256"]:
         raise RuntimeError("Build receipt Cargo.lock differs from the pinned lockfile")
-    if receipt["platform_tag"] != pins["platform_tag"] or receipt["platform_tag"] != platform_tag:
-        raise RuntimeError("Build receipt platform differs from the pinned wheel platform")
+    # The pinned platform_tag/target/library_sha256 describe the one pinned binary (Linux).
+    # A receipt is built on the runner itself, so it must match this host instead.
+    if receipt["platform_tag"] != platform_tag:
+        raise RuntimeError("Build receipt platform differs from this wheel platform")
     if receipt["library"] != binary.name:
         raise RuntimeError("Build receipt names a different library")
     if digest(binary) != receipt["library_sha256"]:
@@ -37,6 +39,12 @@ def validated_receipt(path, pins, binary, metadata_path, platform_tag):
     if digest(metadata_path) != receipt["cargo_metadata_sha256"]:
         raise RuntimeError("Cargo metadata differs from the build receipt")
     return receipt
+
+
+def library_name():
+    if sys.platform == "win32":
+        return "unitsml_rs.dll"
+    return "libunitsml_rs." + ("dylib" if sys.platform == "darwin" else "so")
 
 
 def main():
@@ -58,11 +66,16 @@ def main():
         raise RuntimeError("Cargo.lock differs from the pinned bytes")
     binary = args.library.resolve()
     platform_tag = sysconfig.get_platform().replace("-", "_").replace(".", "_")
-    if platform_tag != pins["platform_tag"] or binary.name != "libunitsml_rs.so":
+    if binary.name != library_name():
         raise RuntimeError("Native library does not target this wheel platform")
     build_receipt = None
+    info = dict(pins)
     if args.build_receipt:
         build_receipt = validated_receipt(args.build_receipt, pins, binary, args.cargo_metadata, platform_tag)
+        info.update(platform_tag=build_receipt["platform_tag"], target=build_receipt["target"],
+                    library_sha256=build_receipt["library_sha256"])
+    elif platform_tag != pins["platform_tag"]:
+        raise RuntimeError("The pinned native build targets another platform; use a CI build receipt")
     elif digest(binary) != pins["library_sha256"]:
         raise RuntimeError("Library differs from the pinned native build")
     metadata = json.loads(args.cargo_metadata.read_bytes())
@@ -94,7 +107,7 @@ def main():
         (notices / "manifest.json").write_text(json.dumps(dependencies, indent=2) + "\n")
         receipt = staging / "build-info.json"
         receipt.write_text(json.dumps({
-            **pins, "library": binary.name, "sha256": digest(binary), "abi_version": 1,
+            **info, "library": binary.name, "sha256": digest(binary), "abi_version": 1,
             "binary_provenance": "ci-build-receipt" if build_receipt else "pinned-binary",
             "build_receipt": build_receipt,
             "cargo_metadata_sha256": digest(args.cargo_metadata),
