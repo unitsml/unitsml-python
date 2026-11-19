@@ -74,3 +74,37 @@ jobs:
           path: .ci-evidence/*
           if-no-files-found: warn
           retention-days: 7
+  replay:
+    name: Testsuite replay (${{ matrix.os }})
+    needs: native
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        # The native library is built for ubuntu only (the native job above).
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v4
+        with:
+          name: native-${{ matrix.os }}
+          path: .native
+      - name: Build the wheel and install it in a fresh environment
+        run: python scripts/ci.py install-wheel
+      - name: Replay the pinned unitsml-testsuite corpora on the installed wheel
+        shell: bash
+        run: |
+          mkdir -p .ci-evidence
+          .ci-venv/bin/python scripts/corpus_replay.py --report .ci-evidence/corpus-replay-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: corpus-replay-${{ matrix.os }}
+          include-hidden-files: true
+          path: .ci-evidence/*
+          if-no-files-found: warn
+          retention-days: 7
