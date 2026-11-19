@@ -50,6 +50,8 @@ def checkout(pin, name):
     target.mkdir(parents=True)
     origin = LOCAL.get(repository) or f"https://github.com/{repository}.git"
     run(["git", "init", "-q", target], f"clone-{name}-init")
+    # Windows runners default to core.autocrlf=true; keep the pinned bytes (Cargo.lock hash).
+    run(["git", "-C", target, "config", "core.autocrlf", "false"], f"clone-{name}-config")
     run(["git", "-C", target, "fetch", "-q", "--depth", "1", origin, revision], f"clone-{name}-fetch")
     run(["git", "-C", target, "checkout", "-q", "FETCH_HEAD"], f"clone-{name}-checkout")
     got = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=target, text=True).strip()
